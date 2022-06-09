@@ -1,6 +1,7 @@
 # Metaborcoding fragments Apps
 
 library(shiny)
+library(plotly)
 library(ggplot2)
 library(shinydashboard)
 
@@ -17,7 +18,7 @@ ui <- dashboardPage(
   dashboardBody(
     fluidRow(
     box(
-      title = "Sequences visualization", #background = "teal", solidHeader = TRUE,
+      title = h3("Sequences visualization", style = 'font-size:42px;color:blue;'),
       width = 12, status = "primary",
       plotOutput("plot", height = 500)
     )
@@ -72,7 +73,7 @@ server <- function(input, output, session) {
             axis.ticks = element_blank(),
             axis.title.x = element_blank(),
             axis.title.y = element_blank(),
-            legend.position = "bottom",
+            legend.position = "top",
             legend.title = element_text(size = 20),
             legend.text = element_text(size = 14),
             panel.background = element_blank(),
